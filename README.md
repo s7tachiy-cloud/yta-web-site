@@ -25,7 +25,7 @@ https://s7tachiy-cloud.github.io/yta-web-site/
 ├── tokushoho.html         特定商取引法に基づく表記（noindex）
 ├── samples/               業種別サンプル HP（各 4 ページ）
 │   ├── koumuten/          工務店サンプル
-│   ├── shokudou/          飲食店サンプル
+│   ├── gyouseishoshi/     行政書士サンプル
 │   └── seitai/            治療院サンプル
 └── css/style.css
 ```
