@@ -404,6 +404,18 @@ section p {
     gap: 24px;
 }
 
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1024px) {
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .card {
     padding: 32px;
     background: white;
@@ -753,7 +765,8 @@ footer .copyright {
         font-size: 28px;
     }
     .grid-3,
-    .grid-2 {
+    .grid-2,
+    .grid-4 {
         grid-template-columns: 1fr;
     }
     nav ul {
