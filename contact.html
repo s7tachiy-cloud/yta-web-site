@@ -64,15 +64,12 @@
     padding: 14px 56px;
     font-size: 16px;
 }
-.notice-pending {
-    padding: 24px;
-    background: #fff8e1;
-    border-left: 4px solid #f57c00;
-    margin-bottom: 32px;
-    border-radius: 4px;
-}
-.notice-pending strong {
-    color: #e65100;
+.contact-form .hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 </style>
 </head>
@@ -104,13 +101,13 @@
 <section>
     <div class="container">
         <div class="contact-form">
-            <!-- ⚠️ 暫定実装（Formspree 登録前）: 立花が Formspree に登録後、form action の URL を実エンドポイントに置換 -->
-            <div class="notice-pending">
-                <p><strong>⚠️ お問い合わせフォームは現在準備中です。</strong></p>
-                <p style="margin-top:8px;font-size:14px;">フォームの送信機能は近日中に有効化されます。お急ぎの方は <a href="tokushoho.html">特定商取引法に基づく表記</a> 内のご連絡先までお問い合わせください。</p>
-            </div>
+            <form action="https://formspree.io/f/maqvadkd" method="POST">
+                <input type="hidden" name="_subject" value="YTA WEB お問い合わせ">
+                <div class="hp-field" aria-hidden="true">
+                    <label for="hp-field">この項目は入力しないでください</label>
+                    <input type="text" id="hp-field" name="_gotcha" tabindex="-1" autocomplete="off">
+                </div>
 
-            <form action="https://formspree.io/f/PLACEHOLDER" method="POST" onsubmit="alert('お問い合わせフォームは現在準備中です。送信機能は近日中に有効化されます。'); return false;">
                 <div class="form-group">
                     <label for="name">お名前 <span class="required">必須</span></label>
                     <input type="text" id="name" name="name" required placeholder="山田 太郎">
