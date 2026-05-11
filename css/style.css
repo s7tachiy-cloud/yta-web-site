@@ -800,3 +800,269 @@ footer .copyright {
         font-size: 14px;
     }
 }
+
+/* ========================================
+   Phase B: 視覚的アップグレード (2025-05-02)
+   - 装飾排除の方針を維持しつつ、シャドウ・微アニメ・サンプルプレビューで
+     「HP販売業者の自社HPとしてのプロ感」を補強
+   - 既存CSS設計（白基調+紺青1色+補助グレー）と整合
+   ======================================== */
+
+/* デザイントークン追加 */
+:root {
+    --shadow-card: 0 1px 3px rgba(31, 58, 95, 0.06), 0 1px 2px rgba(31, 58, 95, 0.04);
+    --shadow-card-hover: 0 8px 24px rgba(31, 58, 95, 0.10), 0 2px 4px rgba(31, 58, 95, 0.04);
+    --shadow-cta: 0 2px 4px rgba(31, 58, 95, 0.12);
+    --shadow-cta-hover: 0 6px 16px rgba(31, 58, 95, 0.20);
+    --transition-default: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-card: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Cards (4つの強み) — shadow + hover lift */
+.card {
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-card);
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(31, 58, 95, 0.15);
+}
+
+/* Hero price cards — hover lift (border-top accent は既存) */
+.hero-price-card {
+    transition: var(--transition-card);
+}
+.hero-price-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(31, 58, 95, 0.10);
+}
+
+/* CTA buttons — subtle elevation + hover lift */
+.cta {
+    box-shadow: var(--shadow-cta);
+    transition: var(--transition-default);
+}
+.cta:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-cta-hover);
+}
+.cta:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-cta);
+}
+.cta-secondary {
+    box-shadow: none;
+}
+.cta-secondary:hover {
+    box-shadow: var(--shadow-cta-hover);
+}
+
+/* Promise list — シンプルなボーダー線 → カード化 */
+section .promise-list li {
+    padding: 22px 24px 22px 60px;
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-default);
+}
+section .promise-list li:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(31, 58, 95, 0.15);
+}
+section .promise-list li:last-child {
+    border-bottom: 1px solid var(--color-border);
+}
+section .promise-list li::before {
+    left: 24px;
+    top: 22px;
+}
+
+/* FAQ items — シンプルな下線 → カード化 */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.faq-item {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-default);
+}
+.faq-item:first-child { padding-top: 24px; }
+.faq-item:last-child { border-bottom: 1px solid var(--color-border); }
+.faq-item:hover {
+    border-color: rgba(31, 58, 95, 0.15);
+    box-shadow: var(--shadow-card-hover);
+}
+
+/* ========== Samples Preview Section (NEW) ========== */
+.samples-preview-section {
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+}
+.samples-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 960px;
+    margin: 16px auto 0;
+}
+@media (max-width: 768px) {
+    .samples-preview { grid-template-columns: 1fr; }
+}
+.sample-card {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--color-text);
+    display: block;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-card);
+}
+.sample-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(31, 58, 95, 0.2);
+    opacity: 1;
+}
+
+/* CSS-only mockup preview (Phase Bでは画像不使用、Phase Cで実スクショ化) */
+.sample-card-preview {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--color-border);
+    background: white;
+}
+.sample-card-preview .browser-bar {
+    height: 22px;
+    background: #eef0f2;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    gap: 4px;
+}
+.sample-card-preview .browser-bar::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #c5cad1;
+    box-shadow: 12px 0 0 #c5cad1, 24px 0 0 #c5cad1;
+}
+.sample-card-preview .mock-body {
+    padding: 14px 16px;
+    height: calc(100% - 22px);
+}
+.sample-card-preview .mock-header {
+    width: 55%;
+    height: 8px;
+    border-radius: 2px;
+    margin-bottom: 12px;
+}
+.sample-card-preview .mock-image {
+    width: 100%;
+    height: 56px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.sample-card-preview .mock-line {
+    height: 5px;
+    background: var(--color-border);
+    border-radius: 2px;
+    margin-bottom: 5px;
+}
+.sample-card-preview .mock-line.short { width: 75%; }
+.sample-card-preview .mock-line.shorter { width: 55%; }
+
+/* 業種別カラーアクセント（テンプレ多様性を視覚的に伝える） */
+.sample-card.koumuten .sample-card-preview .mock-image {
+    background: linear-gradient(135deg, #6b5642 0%, #b89070 100%);
+}
+.sample-card.koumuten .sample-card-preview .mock-header {
+    background: #6b5642;
+}
+.sample-card.gyouseishoshi .sample-card-preview .mock-image {
+    background: linear-gradient(135deg, #1f3a5f 0%, #4a6fa5 100%);
+}
+.sample-card.gyouseishoshi .sample-card-preview .mock-header {
+    background: #1f3a5f;
+}
+.sample-card.seitai .sample-card-preview .mock-image {
+    background: linear-gradient(135deg, #5a8a5a 0%, #9bc3a0 100%);
+}
+.sample-card.seitai .sample-card-preview .mock-header {
+    background: #5a8a5a;
+}
+
+.sample-card-content {
+    padding: 20px 22px 22px;
+}
+.sample-card-content h3 {
+    margin: 0 0 8px;
+    font-size: 19px;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+.sample-card-content .desc {
+    color: var(--color-text-muted);
+    font-size: 14px;
+    line-height: 1.75;
+    margin: 0 0 14px;
+}
+.sample-card-content .link {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap 0.2s ease;
+}
+.sample-card:hover .sample-card-content .link {
+    gap: 10px;
+}
+
+/* Hero の subtle entrance animations */
+@keyframes ytaFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.hero h1,
+.hero .tagline,
+.hero-price-cards,
+.hero > .container > .cta-group {
+    animation: ytaFadeInUp 0.7s ease-out backwards;
+}
+.hero h1 { animation-delay: 0.05s; }
+.hero .tagline { animation-delay: 0.18s; }
+.hero-price-cards { animation-delay: 0.30s; }
+.hero > .container > .cta-group { animation-delay: 0.45s; }
+
+/* prefers-reduced-motion アクセシビリティ対応 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
