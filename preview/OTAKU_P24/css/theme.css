@@ -1,0 +1,8 @@
+/* Phase B-5: 業種別カラーパレット上書き */
+/* template_id: koumuten */
+:root {
+    --c-primary: #6b5642;
+    --c-primary-dark: #4a3a2c;
+    --c-accent: #9a7e5e;
+    --c-soft: #f7f3ee;
+}
