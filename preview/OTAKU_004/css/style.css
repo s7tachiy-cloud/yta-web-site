@@ -166,6 +166,15 @@ section p { margin-bottom: 14px; }
     background: var(--c-beige) center/cover;
     border-bottom: 1px solid var(--c-border);
 }
+/* 施工写真の掲載枠プレースホルダ（架空写真を使わず「これから一緒に」を表現） */
+.work-img-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--c-soft);
+    color: var(--c-primary);
+    opacity: 0.85;
+}
 .work-card-body { padding: 20px; }
 .work-card-body h3 { font-size: 17px; margin-bottom: 8px; }
 .work-card-body .meta {
