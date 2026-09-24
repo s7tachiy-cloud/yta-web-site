@@ -294,7 +294,7 @@ nav a.active {
     font-weight: 700;
 }
 
-.hero .cta-group {
+.cta-group {
     display: flex;
     justify-content: center;
     gap: 16px;
@@ -685,6 +685,8 @@ footer .footer-nav {
 }
 
 footer .footer-nav a {
+    display: inline-block;
+    white-space: nowrap;
     color: var(--color-text-muted);
     margin: 0 12px;
     font-size: 13px;
@@ -998,6 +1000,12 @@ section .promise-list li::before {
 }
 .sample-card.gyouseishoshi .sample-card-preview .mock-header {
     background: #1f3a5f;
+}
+.sample-card.shihoshoshi .sample-card-preview .mock-image {
+    background: linear-gradient(135deg, #455a64 0%, #78909c 100%);
+}
+.sample-card.shihoshoshi .sample-card-preview .mock-header {
+    background: #455a64;
 }
 .sample-card.seitai .sample-card-preview .mock-image {
     background: linear-gradient(135deg, #5a8a5a 0%, #9bc3a0 100%);
