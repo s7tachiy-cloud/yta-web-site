@@ -120,9 +120,11 @@ nav a:hover, nav a.active { color: var(--c-primary); border-bottom: 2px solid va
     letter-spacing: 0.06em;
 }
 .hero .lead {
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
     font-size: 17px;
     margin-bottom: 36px;
-    opacity: 0.95;
+    opacity: 1;
     line-height: 1.85;
     font-family: 'Noto Sans JP', sans-serif;
 }

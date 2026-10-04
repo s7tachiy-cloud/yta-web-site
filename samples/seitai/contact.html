@@ -46,9 +46,9 @@
 <section>
     <div class="container">
         <h2>お電話でのご予約</h2>
-        <p class="lead">お急ぎの方はお電話が確実です。</p>
+        <p class="lead">電話番号は架空の表示見本です。発信はできません。</p>
         <div style="text-align:center;">
-            <a href="tel:0567891234" style="font-size:36px;font-weight:700;color:var(--c-primary-dark);text-decoration:none;letter-spacing:0.06em;">056-789-1234</a>
+            <span style="font-size:36px;font-weight:700;color:var(--c-primary-dark);text-decoration:none;letter-spacing:0.06em;">056-789-1234<span style="display:inline-block;font-size:14px;font-weight:400;letter-spacing:normal;">（架空・発信不可）</span></span>
             <p style="margin-top:8px;font-size:14px;color:var(--c-text-muted);">受付時間：10:00 - 19:00（火曜定休）</p>
         </div>
     </div>
@@ -57,23 +57,24 @@
 <section class="alt">
     <div class="container">
         <h2>フォームでのご予約・お問い合わせ</h2>
-        <p class="lead">2 営業日以内にご返信いたします。</p>
-        <form class="contact-form" onsubmit="alert('サンプルフォームのため送信されません'); return false;">
+        <p class="lead">実際のサイトでの受付案内を置く位置の見本です。</p>
+        <p class="lead"><strong>フォームは見本です。入力・送信はできません。</strong>連絡や予約は受け付けていません。</p>
+        <div class="contact-form" role="group" aria-label="入力・送信できないサンプルフォーム">
             <div class="form-row">
                 <label>お名前 <span style="color:#c00;">必須</span></label>
-                <input type="text" required>
+                <input type="text" required disabled aria-disabled="true">
             </div>
             <div class="form-row">
                 <label>電話番号 <span style="color:#c00;">必須</span></label>
-                <input type="tel" required>
+                <input type="tel" required disabled aria-disabled="true">
             </div>
             <div class="form-row">
                 <label>メールアドレス</label>
-                <input type="email">
+                <input type="email" disabled aria-disabled="true">
             </div>
             <div class="form-row">
                 <label>ご利用希望コース</label>
-                <select>
+                <select disabled aria-disabled="true">
                     <option>全身整体コース（60 分）</option>
                     <option>じっくり全身ケア（90 分）</option>
                     <option>肩・首集中コース（40 分）</option>
@@ -85,11 +86,11 @@
             </div>
             <div class="form-row">
                 <label>ご希望日</label>
-                <input type="date">
+                <input type="date" disabled aria-disabled="true">
             </div>
             <div class="form-row">
                 <label>ご希望時間帯</label>
-                <select>
+                <select disabled aria-disabled="true">
                     <option>10:00 - 12:00</option>
                     <option>12:00 - 14:00</option>
                     <option>14:00 - 16:00</option>
@@ -99,15 +100,15 @@
             </div>
             <div class="form-row">
                 <label>その他ご要望・お身体の状態など</label>
-                <textarea placeholder="気になる箇所、初回の方はその旨もお書きください"></textarea>
+                <textarea placeholder="気になる箇所、初回の方はその旨もお書きください" disabled aria-disabled="true"></textarea>
             </div>
             <div class="form-submit">
-                <button type="submit">送信する</button>
+                <button type="button" disabled aria-disabled="true">送信できません（見本）</button>
             </div>
-        </form>
+        </div>
 
         <div style="max-width:640px;margin:32px auto 0;font-size:13px;color:var(--c-text-muted);text-align:center;">
-            <p>※ ご予約は確定ではありません。送信後、当院より確認のご連絡をいたします。</p>
+            <p>※ このフォームで予約やお問い合わせはできません。入力・送信の操作は無効です。</p>
         </div>
     </div>
 </section>
@@ -118,7 +119,7 @@
             <div>
                 <h4>やすらぎ整体院</h4>
                 <p>〒XXX-XXXX<br>〇〇県〇〇市〇〇町 7-8-9 ビル 2F</p>
-                <p>TEL: 056-789-1234</p>
+                <p>TEL: 056-789-1234<span style="display:inline-block;font-size:14px;font-weight:400;letter-spacing:normal;">（架空・発信不可）</span></p>
             </div>
             <div>
                 <h4>メニュー</h4>

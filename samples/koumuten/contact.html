@@ -41,9 +41,9 @@
 <section>
     <div class="container">
         <h2>お電話でのお問い合わせ</h2>
-        <p class="lead">お急ぎの方はお電話が確実です。</p>
+        <p class="lead">電話番号は架空の表示見本です。発信はできません。</p>
         <div style="text-align:center;">
-            <a href="tel:0123456789" style="font-size:36px;font-weight:700;color:var(--c-primary-dark);text-decoration:none;letter-spacing:0.06em;">012-345-6789</a>
+            <span style="font-size:36px;font-weight:700;color:var(--c-primary-dark);text-decoration:none;letter-spacing:0.06em;">012-345-6789<span style="display:inline-block;font-size:14px;font-weight:400;letter-spacing:normal;">（架空・発信不可）</span></span>
             <p style="margin-top:8px;font-size:14px;color:var(--c-text-muted);">受付時間：8:00 - 18:00（日曜定休）</p>
         </div>
     </div>
@@ -52,23 +52,24 @@
 <section class="alt">
     <div class="container">
         <h2>フォームでのお問い合わせ</h2>
-        <p class="lead">2 営業日以内にこちらからご連絡いたします。</p>
-        <form class="contact-form" onsubmit="alert('サンプルフォームのため送信されません'); return false;">
+        <p class="lead">実際のサイトでの受付案内を置く位置の見本です。</p>
+        <p class="lead"><strong>フォームは見本です。入力・送信はできません。</strong>連絡や予約は受け付けていません。</p>
+        <div class="contact-form" role="group" aria-label="入力・送信できないサンプルフォーム">
             <div class="form-row">
                 <label>お名前 <span style="color:#c00;">必須</span></label>
-                <input type="text" required>
+                <input type="text" required disabled aria-disabled="true">
             </div>
             <div class="form-row">
                 <label>電話番号</label>
-                <input type="tel">
+                <input type="tel" disabled aria-disabled="true">
             </div>
             <div class="form-row">
                 <label>メールアドレス <span style="color:#c00;">必須</span></label>
-                <input type="email" required>
+                <input type="email" required disabled aria-disabled="true">
             </div>
             <div class="form-row">
                 <label>ご相談内容</label>
-                <select>
+                <select disabled aria-disabled="true">
                     <option>新築をご検討</option>
                     <option>リフォーム・改装</option>
                     <option>店舗・事業所の工事</option>
@@ -78,12 +79,12 @@
             </div>
             <div class="form-row">
                 <label>お問い合わせ内容 <span style="color:#c00;">必須</span></label>
-                <textarea required placeholder="工事内容・ご希望・現状などをお聞かせください"></textarea>
+                <textarea required placeholder="工事内容・ご希望・現状などをお聞かせください" disabled aria-disabled="true"></textarea>
             </div>
             <div class="form-submit">
-                <button type="submit">送信する</button>
+                <button type="button" disabled aria-disabled="true">送信できません（見本）</button>
             </div>
-        </form>
+        </div>
     </div>
 </section>
 
@@ -93,7 +94,7 @@
             <div>
                 <h4>みのり工務店</h4>
                 <p>〒XXX-XXXX<br>〇〇県〇〇市〇〇町 1-2-3</p>
-                <p>TEL: 012-345-6789</p>
+                <p>TEL: 012-345-6789<span style="display:inline-block;font-size:14px;font-weight:400;letter-spacing:normal;">（架空・発信不可）</span></p>
             </div>
             <div>
                 <h4>事業内容</h4>
